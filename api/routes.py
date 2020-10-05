@@ -5,7 +5,7 @@ from flask import Flask, request, render_template
 def index():
     return render_template('index.html')
 
-@app.route('/new-message')
+@app.route('/new-message', methods=['GET'])
 def new_message_get():
     return render_template('newmessage.html')
 
