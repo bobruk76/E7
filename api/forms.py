@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, TextAreaField
+
 
 class MessageForm(FlaskForm):
-    message = StringField(u'Сообщение')
+    message = TextAreaField(u'Сообщение')
 
 class TagCommentForm(FlaskForm):
     tag = StringField(u'Тег')
-    comment = StringField(u'Комментарий')
+    comment = TextAreaField(u'Комментарий')

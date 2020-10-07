@@ -35,8 +35,10 @@ class Message():
         return list(cursor)[0]
 
     def update_tags(self, _id, new_tag):
-
         self.db.update({'_id': ObjectId(_id)}, {'$push': {'tags': new_tag}})
+
+    def update_comments(self, _id, new_comment):
+        self.db.update({'_id': ObjectId(_id)}, {'$push': {'comments': new_comment}})
     
     # fib_memory = json.loads(r.get('fib_memory'))
     #

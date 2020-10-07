@@ -29,8 +29,13 @@ def message_get(_id):
         message = Message().get(_id)
         return render_template('message.html', message=message, form=tag_comment_form)
 
-@app.route('/message/<_id>/new-tag', methods=['POST'])
-def tag_set(_id):
-    tag = request.form.get('tag')
-    Message().update_tags(_id, tag)
+@app.route('/message/<_id>/<obj>', methods=['POST'])
+def _set(_id, obj):
+    if obj == 'new-tag':
+        tag = request.form.get('tag')
+        Message().update_tags(_id, tag)
+    elif obj == 'new-comment':
+        comment = request.form.get('comment')
+        Message().update_comments(_id, comment)
+
     return redirect('/message/{}/'.format(_id))
