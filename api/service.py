@@ -33,6 +33,10 @@ class Message():
     def get(self, _id):
         cursor = self.db.find({'_id': ObjectId(_id)})
         return list(cursor)[0]
+
+    def update_tags(self, _id, new_tag):
+
+        self.db.update({'_id': ObjectId(_id)}, {'$push': {'tags': new_tag}})
     
     # fib_memory = json.loads(r.get('fib_memory'))
     #

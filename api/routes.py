@@ -21,10 +21,16 @@ def new_message_set():
 
     return render_template('newmessage.html', form=message_form)
 
-@app.route('/message/<_id>', methods=['GET','POST'])
+@app.route('/message/<_id>/', methods=['GET','POST'])
 def message_get(_id):
 
     if request.method == 'GET':
         tag_comment_form = TagCommentForm()
         message = Message().get(_id)
         return render_template('message.html', message=message, form=tag_comment_form)
+
+@app.route('/message/<_id>/new-tag', methods=['POST'])
+def tag_set(_id):
+    tag = request.form.get('tag')
+    Message().update_tags(_id, tag)
+    return redirect('/message/{}/'.format(_id))

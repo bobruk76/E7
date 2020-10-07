@@ -6,10 +6,15 @@
 </head>
 	<body>
 		<h2 class="title">Сообщение</h2>
-		<div class="container">
-				{{ message.message }}
-		</div>
+			<div class="container">
+					{{ message.message }}
+			</div>
 		<h2 class="Теги">Теги</h2>
+		<ul>
+            {% for item in message.tags %}
+              <li>{{ item }}</li>
+            {% endfor %}
+		</ul>
 			<form method="POST" action="new-tag">
 					{{ form.csrf_token }}
 				<div class="form-field">
@@ -18,8 +23,5 @@
 				</div>
 				<input type="submit" value="Go">
 			</form>
-		<div>
-				{{ message.message }}
-		</div>
 	</body>
 </html>
