@@ -7,20 +7,26 @@ from pymongo import MongoClient
 host = str(os.environ.get("REDIS_HOST", "localhost"))
 port = int(os.environ.get("REDIS_PORT", 6379))
 # r = redis.StrictRedis(host=host, port=port, db=1)
-mongo_client = MongoClient()
-db_name = 'mongo_first'
+
+db_name = 'e7'
 
 class Message():
     def __init__(self):
-        self.new_collection = mongo_client[db_name]
+        mongo_client = MongoClient()
+        collection = mongo_client[db_name]
+        self.db = collection.messages
         self.result = False
         
     def set(self, message):
         try:
-            self.new_collection.insert({message: message})
+            self.db.insert({'message': message})
             self.result = True
         except:
             self.result = False
+
+    def get_all(self):
+        cursor = self.db.find()
+        return [item for item in cursor]
 
     
     # fib_memory = json.loads(r.get('fib_memory'))

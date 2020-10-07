@@ -7,7 +7,9 @@ from api.service import Message
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    messages = Message().get_all()
+
+    return render_template('index.html', messages=messages)
 
 @app.route('/new-message', methods=['GET','POST'])
 def new_message_get():
