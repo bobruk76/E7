@@ -5,15 +5,15 @@
     <title>New message</title>
 </head>
 <body>
-    <form action="" method="post">
-        <p>
-	        <label for="message">Сообщение</label>
-	        <input type="text" name="message">
-	    </p>
-
-	    <p>
-	        <input type="submit">
-	    </p>
-    </form>
+	<h2 class="title">Forecast</h2>
+	<form method="POST" action="/new-message">
+			{{ form.csrf_token }}
+		<div class="form-field">
+			{{ form.message.label }}
+			{{ form.message }}
+		</div>
+		<div class="form-field">
+		<input type="submit" value="Go">
+	</form>
 </body>
 </html>
