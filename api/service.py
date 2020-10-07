@@ -1,6 +1,7 @@
 import json
 import os
 import redis
+from bson import ObjectId
 from pymongo import MongoClient
 
 
@@ -26,8 +27,12 @@ class Message():
 
     def get_all(self):
         cursor = self.db.find()
-        return [item for item in cursor]
+        messages = list(cursor)
+        return [item for item in messages]
 
+    def get(self, _id):
+        cursor = self.db.find({'_id': ObjectId(_id)})
+        return list(cursor)[0]
     
     # fib_memory = json.loads(r.get('fib_memory'))
     #

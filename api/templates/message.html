@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New message</title>
+</head>
+	<body>
+		<h2 class="title">Сообщение</h2>
+		<div class="container">
+				{{ message.message }}
+		</div>
+		<h2 class="Теги">Теги</h2>
+			<form method="POST" action="new-tag">
+					{{ form.csrf_token }}
+				<div class="form-field">
+					{{ form.tag.label }}
+					{{ form.tag }}
+				</div>
+				<input type="submit" value="Go">
+			</form>
+		<div>
+				{{ message.message }}
+		</div>
+	</body>
+</html>

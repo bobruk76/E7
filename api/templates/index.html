@@ -5,14 +5,16 @@
     <title>Доска объявлений</title>
 </head>
     <body>
-    <h1>
-        Доска объявлений
-    </h1>
-    <p>
-        <a href="/new-message">Создать объявление</a>
-    </p>
-    <div class="container">
-		{{ messages }}
-	</div>
+        <h1>
+            Доска объявлений
+        </h1>
+        <p>
+            <a href="/new-message">Создать объявление</a>
+        </p>
+        <div class="container">
+            {% for item in messages %}
+              <li><a href="/message/{{ item._id }}">{{ item.message }}</a></li>
+            {% endfor %}
+        </div>
     </body>
 </html>
