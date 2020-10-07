@@ -1,15 +1,20 @@
 from api import app
 from flask import Flask, request, render_template
+from forms import MessageForm
+from service import Message
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/new-message', methods=['GET'])
+@app.route('/new-message', methods=['GET','POST'])
 def new_message_get():
-    return render_template('newmessage.html')
+    message_form = MessageForm()
+    message_db = Message()
+    if request.method == 'POST':
+        message = request.form.get('message')
+        message_db.set(message)
+        return redirect('/')
 
-# @app.route('/new-message', action =['post',])
-# def new_message_post():
-#     message = request.form.get('message')
-#     return render_template('mewmessage.html')
+    return render_template('newmessage.html', form=message_form)
+

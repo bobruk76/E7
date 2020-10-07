@@ -20,12 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="314fbdfd-2dc2-4739-b79c-cff903e16b8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/templates/newmessage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/newmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/newmessage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +57,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -84,13 +88,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="344" y="79" width="732" height="644" key="#Inspections" timestamp="1602046708739">
+      <screen x="64" y="27" width="1302" height="741" />
+    </state>
+    <state x="344" y="79" width="732" height="644" key="#Inspections/64.27.1302.741@64.27.1302.741" timestamp="1602046708739" />
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601023731662">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1601023731662" />
-    <state x="610" y="245" width="762" height="623" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601905711254">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="298" y="143" width="824" height="515" key="IDE.errors.dialog" timestamp="1602046686981">
+      <screen x="64" y="27" width="1302" height="741" />
     </state>
+    <state x="298" y="143" width="824" height="515" key="IDE.errors.dialog/64.27.1302.741@64.27.1302.741" timestamp="1602046686981" />
+    <state x="204" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1602046665731">
+      <screen x="64" y="27" width="1302" height="741" />
+    </state>
+    <state x="204" y="31" width="1022" height="737" key="SettingsEditor/64.27.1302.741@64.27.1302.741" timestamp="1602046665731" />
+    <state x="443" y="124" width="762" height="644" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602047676906">
+      <screen x="64" y="27" width="1302" height="741" />
+    </state>
+    <state x="443" y="124" width="762" height="644" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/64.27.1302.741@64.27.1302.741" timestamp="1602047676906" />
     <state x="610" y="245" width="762" height="623" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1601905711254" />
   </component>
 </project>
