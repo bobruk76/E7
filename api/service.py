@@ -13,14 +13,14 @@ db_name = 'mongo_first'
 class Message():
     def __init__(self):
         self.new_collection = mongo_client[db_name]
-        self.result = false
+        self.result = False
         
     def set(self, message):
         try:
             self.new_collection.insert({message: message})
-            self.result = true
+            self.result = True
         except:
-            self.result = false
+            self.result = False
 
     
     # fib_memory = json.loads(r.get('fib_memory'))

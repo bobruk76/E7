@@ -1,7 +1,9 @@
+from werkzeug.utils import redirect
+
 from api import app
 from flask import Flask, request, render_template
-from forms import MessageForm
-from service import Message
+from api.forms import MessageForm
+from api.service import Message
 
 @app.route('/')
 def index():
