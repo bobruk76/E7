@@ -1,4 +1,4 @@
 FROM python:3.8.5
-ADD . /app
-WORKDIR /app
+ADD . /api
+WORKDIR /api
 RUN pip install -r requirements.txt

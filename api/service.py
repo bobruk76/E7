@@ -11,7 +11,7 @@ db_name = 'e7'
 
 class Message():
     def __init__(self):
-        mongo_client = MongoClient()
+        mongo_client = MongoClient('mongo')
         collection = mongo_client[db_name]
         self.db = collection.messages
         self.result = False
