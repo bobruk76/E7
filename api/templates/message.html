@@ -7,28 +7,35 @@
 {% block content %}
 	<div class="container col-10 mx-auto">
 		<h2 class="title">Сообщение</h2>
-			<div class="container">
+			<div class="card text-white bg-dark mb-3 display-2">
 					{{ message.message }}
 			</div>
-		<h2 class="Теги">Теги</h2>
-			<ul>
-				{% for item in message.tags %}
-				  <li>{{ item }}</li>
-				{% endfor %}
-			</ul>
-			<form method="POST" action="new-tag">
-					{{ form.csrf_token }}
-				<div class="form-field">
-					{{ form.tag.label }}
-					{{ form.tag }}
-				</div>
-				<input type="submit" class="btn btn-success col-4" value="Go">
-			</form>
-
-			<h2 class="Теги">Комментарии</h2>
+		<div class="card bg-light">
+			<h2 class="card-header">Теги</h2>
+			<div class="card-body">
+				<p>
+					{% for item in message.tags %}
+						<span class="badge badge-primary badge-pill">{{ item }}</span>
+					{% endfor %}
+				</p>
+				<form method="POST" action="new-tag">
+					<div class="form-group">
+						{{ form.csrf_token }}
+						<div class="form-field">
+							{{ form.tag.label }}
+							{{ form.tag }}
+						</div>
+						<input type="submit" class="btn btn-success col-4" value="Add tag">
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="card bg-light">
+			<h2 class="card-header">Комментарии</h2>
+			<div class="card-body">
 
 				{% for item in message.comments %}
-					<p>{{ item }}</p>
+					<p class="alert alert-success">{{ item }}</p>
 				{% endfor %}
 
 			<form method="POST" action="new-comment">
@@ -37,8 +44,10 @@
 					{{ form.comment.label }}
 					{{ form.comment }}
 				</div>
-				<input type="submit" class="btn btn-success col-4" value="Go">
+				<input type="submit" class="btn btn-success col-4" value="Add comment">
 			</form>
+			</div>
+		</div>
 	</div>
 
 	<script src="{{ url_for('static', filename='scr/scripts.js' ) }}"></script>
