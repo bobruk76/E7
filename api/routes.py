@@ -1,7 +1,7 @@
 from werkzeug.utils import redirect
 
 from api import app
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from api.forms import MessageForm, TagCommentForm
 from api.service import Message
 

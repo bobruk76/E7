@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>New message</title>
-</head>
-	<body>
+{% extends "base.html" %}
+
+{% block title %}
+Сообщение
+{% endblock %}
+
+{% block content %}
+	<div class="container col-10 mx-auto">
 		<h2 class="title">Сообщение</h2>
 			<div class="container">
 					{{ message.message }}
@@ -21,7 +22,7 @@
 					{{ form.tag.label }}
 					{{ form.tag }}
 				</div>
-				<input type="submit" value="Go">
+				<input type="submit" class="btn btn-success col-4" value="Go">
 			</form>
 
 			<h2 class="Теги">Комментарии</h2>
@@ -36,7 +37,10 @@
 					{{ form.comment.label }}
 					{{ form.comment }}
 				</div>
-				<input type="submit" value="Go">
+				<input type="submit" class="btn btn-success col-4" value="Go">
 			</form>
-	</body>
-</html>
+	</div>
+
+	<script src="{{ url_for('static', filename='scr/scripts.js' ) }}"></script>
+
+{% endblock %}
