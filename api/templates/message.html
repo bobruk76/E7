@@ -11,7 +11,7 @@
 					{{ message.message }}
 			</div>
 		<div class="card bg-light">
-			<h2 class="card-header">Теги</h2>
+			<h2 class="card-header">Теги (<span>{{ message.tags|length }}</span>)</h2>
 			<div class="card-body">
 				<p>
 					{% for item in message.tags %}
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="card bg-light">
-			<h2 class="card-header">Комментарии</h2>
+			<h2 class="card-header">Комментарии (<span>{{ message.comments|length }}</span>)</h2>
 			<div class="card-body">
 
 				{% for item in message.comments %}

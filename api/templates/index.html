@@ -18,6 +18,10 @@
             {% for item in messages %}
                 <a class="list-group-item list-group-item-action" href="/message/{{ item._id }}/">
                     {{ item.message }}
+                    <ul>
+                        <li class="list-group-item list-group-item-secondary">тегов:{{ item.tags|length }}</li>
+                        <li class="list-group-item list-group-item-secondary">комментариев:{{ item.comments|length }}</li>
+                    </ul>
                 </a>
             {% endfor %}
         </div>
