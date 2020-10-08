@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>New message</title>
-</head>
-<body>
-	<h2 class="title">Forecast</h2>
+{% extends "base.html" %}
+
+{% block title %}
+Сообщение
+{% endblock %}
+
+{% block content %}
+	<h2 class="title">Новое сообщение</h2>
 	<form method="POST" action="/new-message">
 			{{ form.csrf_token }}
 		<div class="form-field">
 			{{ form.message.label }}
 			{{ form.message }}
 		</div>
-		<input type="submit" value="Go">
+		<input type="submit" value="Опубликовать">
 	</form>
-</body>
-</html>
+{% endblock %}

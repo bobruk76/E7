@@ -1,13 +1,11 @@
-import json
-import os
 import redis
 from bson import ObjectId
+from bson.json_util import dumps, loads
 from pymongo import MongoClient
 
+from api import redis_port, redis_host
 
-host = str(os.environ.get("REDIS_HOST", "localhost"))
-port = int(os.environ.get("REDIS_PORT", 6379))
-# r = redis.StrictRedis(host=host, port=port, db=1)
+r = redis.StrictRedis(host=redis_host, port=redis_port, db=3)
 
 db_name = 'e7'
 
@@ -31,22 +29,18 @@ class Message():
         return [item for item in messages]
 
     def get(self, _id):
-        cursor = self.db.find({'_id': ObjectId(_id)})
-        return list(cursor)[0]
+        if r.exists(_id):
+            cursor = loads(r.get(_id))
+        else:
+            cursor = self.db.find({'_id': ObjectId(_id)})[0]
+            r.set(_id, dumps(cursor))
+        return cursor
 
     def update_tags(self, _id, new_tag):
+        r.delete(_id)
         self.db.update({'_id': ObjectId(_id)}, {'$push': {'tags': new_tag}})
 
     def update_comments(self, _id, new_comment):
+        r.delete(_id)
         self.db.update({'_id': ObjectId(_id)}, {'$push': {'comments': new_comment}})
-    
-    # fib_memory = json.loads(r.get('fib_memory'))
-    #
-    # fib_max = json.loads(r.get('fib_max'))
-    # if num <= fib_max:
-    #     return fib_memory[str(num)]
-    # for item in range(fib_max+1, num+1):
-    #     fib_memory[str(item)] = fib_memory[str(item-2)] + fib_memory[str(item-1)]
-    # r.set('fib_max', json.dumps(num))
-    # r.set('fib_memory', json.dumps(fib_memory))
-    # return fib_memory[str(num)]
+
